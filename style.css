@@ -229,9 +229,16 @@ body {
         padding-left: 5%;
     }
 
-    .text_area>span:last-child {
-        margin-right: 5%;
-        font-size: 30px;
+    #mobile_text_area > .slogan:first-child {
+        font-size: 40px;
+    }
+
+    #mobile_text_area > .slogan:last-child {
+        font-size: 50px;
+    }
+
+    #mobile_text_area > .slogan > span:nth-child(2) {
+        font-size: 60px;
     }
 
     .figure {
