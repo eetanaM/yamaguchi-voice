@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2C2C2C;
+    background-image: radial-gradient(circle, transparent 4px, #181818 4px);
+    background-size: 50px 50px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text_area {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 35%;
+    height: 100%;
+}
+
+.text_area>h1 {
+    padding-right: 20%;
+    font-size: 56px;
+    font-weight: normal;
+}
+
+.text_area>p {
+    padding-right: 20%;
+    font-size: 22px;
+    line-height: 200%;
+}
+
+.text_area>span {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.text_area>span:last-child {
+    font-size: 50px;
+    align-self: end;
+}
+
+.punctuation {
+    font-weight: normal;
+}
+
+.figure {
+    position: relative;
+    align-self: start;
+    text-align: center;
+    width: 20%;
+    height: calc(100% - 40px);
+}
+
+.statue_container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 600px;
+    height: 100%;
+    border-bottom-left-radius: 265px;
+    border-bottom-right-radius: 265px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.statue {
+    position: absolute;
+    display: none;
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%);
+    max-height: calc(100vh - 100px);
+}
+
+.appearing {
+    display: block;
+    animation: figureAppearance 5s 0s, figureAnim 3s 5s infinite alternate;
+}
+
+.portal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 60px;
+    width: 300px;
+    transform: translate(-50%);
+    background-color: black;
+    border-radius: 50%;
+    z-index: 99;
+    animation: portalAppearance 1s 0s;
+}
+
+.portal_resized {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 60px;
+    width: 250px;
+    transform: translate(-50%);
+    background-color: black;
+    border-radius: 50%;
+    z-index: 99;
+    animation: portalResize 4s 0s ease-in;
+}
+
+.side_logo {
+    text-align: center;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+}
+.side_logo>img {
+    max-width: calc(100% - 10px);
+    max-height: calc(100vh - 70px);
+}
+
+@keyframes figureAppearance {
+    from {
+        transform: translate(-50%, 100%);
+    }
+    to {
+        transform: translate(-50%) rotateZ(-2deg);
+    }
+}
+
+@keyframes figureAnim {
+    from {
+        transform: translate(-50%) rotateZ(-2deg)
+    }
+    to {
+        transform: translate(-50%, -10px) rotateZ(2deg)
+    }
+}
+
+@keyframes portalAppearance {
+    from {
+        transform: translate(-50%) scale(0);
+    }
+    to {
+        transform: translate(-50%) scale(100%);
+    }
+}
+
+@keyframes portalResize {
+    from {
+        width: 300px;
+    }
+    to {
+        width: 250px;
+    }
+}
+
+
+@media screen and (max-width: 1800px) {
+    .text_area>h1 {
+        font-size: 40px;
+    }
+
+    .text_area>p {
+        font-size: 18px;
+    }
+
+    .text_area>span {
+        font-size: 30px;
+    }
+
+    .text_area>span:last-child {
+        font-size: 40px;
+    }
+
+    .statue_container {
+        width: 400px;
+        border-bottom-left-radius: 165px;
+        border-bottom-right-radius: 165px;
+    }
+
+    .portal {
+        width: 260px;
+    }
+
+    .portal_resized {
+        width: 180px;
+    }
+
+    @keyframes portalResize {
+        from {
+            width: 260px;
+        }
+        to {
+            width: 180px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 880px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .text_area {
+        width: 100%;
+        height: fit-content;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .text_area>h1 {
+        padding-left: 5%;
+    }
+
+    .text_area>p {
+        padding-left: 5%;
+    }
+
+    .text_area>span {
+        padding-left: 5%;
+    }
+
+    .text_area>span:last-child {
+        margin-right: 5%;
+        font-size: 30px;
+    }
+
+    .figure {
+        align-self: center;
+        width: 100%;
+        height: 800px;
+    }
+
+    .statue_container {
+        width: 100%;
+        height: 800px
+    }
+
+    .statue {
+        max-width: 100%;
+    }
+
+    .side_logo {
+        position: relative;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .side_logo>img {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        width: 150vw;
+        max-width: none;
+        max-height: none;
+    }
+}
